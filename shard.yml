@@ -1,0 +1,25 @@
+name: opal
+version: 1.0.0
+license: MIT
+
+authors:
+  - abstraq <abstraq@outlook.com>
+
+targets:
+  opal:
+    main: src/opal.cr
+
+dependencies:
+# Web Framework
+  athena:
+    github: athena-framework/framework
+    version: ~> 0.16.0
+
+development_dependencies:
+  # Code Linter
+  ameba:
+    github: crystal-ameba/ameba
+  
+crystal: 1.3.2
+
+
