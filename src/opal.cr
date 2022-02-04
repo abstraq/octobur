@@ -5,8 +5,11 @@
 
 require "athena"
 
+require "../config/config"
+
 module Opal
-  VERSION     = {{ `shards version "#{__DIR__}"`.chomp.stringify.downcase }}
+  VERSION = {{ `shards version "#{__DIR__}"`.chomp.stringify.downcase }}
+
   SERVER_HOST = ENV["OPAL_SERVER_HOST"]? || "127.0.0.1"
   SERVER_PORT = (ENV["OPAL_SERVER_PORT"]? || 3000).to_i
 
