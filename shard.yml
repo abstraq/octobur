@@ -1,13 +1,14 @@
-name: opal
+name: octobur
+description: Open sourced forum software.
 version: 1.0.0
 license: MIT
+
+crystal: 1.3.2
 
 authors:
   - abstraq <abstraq@outlook.com>
 
-targets:
-  opal:
-    main: src/opal.cr
+repository: https://github.com/Octobur/octobur
 
 dependencies:
   athena:
@@ -16,20 +17,11 @@ dependencies:
   pg:
     github: will/crystal-pg
     version: ~> 0.26.0
-  jennifer:
-    github: imdrasil/jennifer.cr
-    version: ~> 0.12.0
-  sam:
-    github: imdrasil/sam.cr
-    version: ~> 0.4.2
-  crystal-argon2:
-    github: Axentro/crystal-argon2
-    version: ~> 0.1.3
 
 development_dependencies:
   ameba:
     github: crystal-ameba/ameba
-  
-crystal: 1.3.2
 
-
+targets:
+  octobur:
+    main: src/octobur.cr

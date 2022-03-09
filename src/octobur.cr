@@ -3,6 +3,8 @@
 # license that can be found in the LICENSE file or at
 # https://opensource.org/licenses/MIT.
 
-require "./initializers/**"
-require "../src/models/**"
-require "../src/controllers/**"
+require "athena"
+
+require "./constants"
+
+ATH.run Octobur::SERVER_PORT, Octobur::SERVER_HOST

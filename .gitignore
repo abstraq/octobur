@@ -1,5 +1,6 @@
+/.shards/
+/.vscode/
+/bin/
 /docs/
 /lib/
-/bin/
-/.shards/
 *.dwarf

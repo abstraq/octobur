@@ -1,8 +1,8 @@
-# Opal
-[![GitHub license](https://img.shields.io/github/license/Octobur/opal.svg)](https://github.com/Octobur/opal/blob/main/LICENSE)
+# Octobur
+[![GitHub license](https://img.shields.io/github/license/Octobur/octobur.svg)](https://github.com/Octobur/octobur/blob/main/LICENSE)
 
-Opal is the backend for [Octobur](https://github.com/Octobur/octobur) forum software.
+Octobur is an open sourced forum software written in crystal.
 
 ## License
-Opal is licensed under the [MIT](https://github.com/Octobur/opal/blob/main/LICENSE) license.
+Octobur is licensed under the [MIT](https://github.com/Octobur/octobur/blob/main/LICENSE) license.
 Copyright 2022 [abstraq](https://github.com/abstraq).
