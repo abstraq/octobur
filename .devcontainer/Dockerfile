@@ -1,17 +1,15 @@
-ARG VARIANT="buster"
-FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
+# Create a variable with a default value of  latest
+ARG VARIANT=latest
 
-RUN curl -fsSL https://crystal-lang.org/install.sh | sudo bash
+# Use the official Crystal container
+FROM crystallang/crystal:${VARIANT}
 
-# Install Crystal
+# Variables that will setup a non-root user.
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+COPY library-scripts/common-debian.sh /tmp/library-scripts/
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -yq crystal libpcre2-dev
-
-
-# Install Crystalline Language Server
-USER vscode
-WORKDIR /home/vscode 
-RUN mkdir .crystalline
-RUN cd .crystalline && wget https://github.com/elbywan/crystalline/releases/latest/download/crystalline_x86_64-unknown-linux-gnu.gz -O crystalline.gz &&\
-    gzip -d crystalline.gz &&\
-    chmod u+x crystalline
+    && bash /tmp/library-scripts/common-debian.sh "true" "${USERNAME}" "${USER_UID}" "${USER_GID}" \
+    && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts

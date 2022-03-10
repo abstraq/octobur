@@ -1,32 +1,44 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.209.6/containers/debian
 {
-	"name": "Debian Crystal",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"VARIANT": "bullseye"
-		}
-	},
+	"name": "Octobur",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/octobur",
 	"settings": {
 		"crystal-lang.implementations": true,
 		"crystal-lang.completion": true,
 		"crystal-lang.hover": true,
-		"crystal-lang.server": "/home/vscode/.crystalline/crystalline"
+		"crystal-lang.server": "/home/vscode/.crystalline/crystalline",
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		},
+		"editor.formatOnSave": true,
+		"files.autoSave": "onFocusChange",
+		"files.eol": "\n",
+		"files.insertFinalNewline": true,
+		"files.trimFinalNewlines": true,
+		"files.trimTrailingWhitespace": true,
+		"git.enableCommitSigning": true,
+		"terminal.integrated.profiles.linux": {
+			"zsh": {
+				"path": "/bin/zsh"
+			}
+		},
+		"terminal.integrated.defaultProfile.linux": "zsh"
 	},
 	"extensions": [
 		"crystal-lang-tools.crystal-lang",
 		"veelenga.crystal-ameba",
 		"ms-azuretools.vscode-docker",
-		"editorconfig.editorconfig"
+		"editorconfig.editorconfig",
+		"ckolkman.vscode-postgres"
 	],
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
-	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
-	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
-	// "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
-	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"forwardPorts": [
+		3000,
+		5432
+	],
+	"postCreateCommand": "shards build",
 	"remoteUser": "vscode",
 	"features": {
 		"docker-in-docker": "latest"
