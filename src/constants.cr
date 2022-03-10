@@ -9,5 +9,5 @@ module Octobur
   SERVER_HOST = ENV["OCTOBUR_SERVER_HOST"]? || "127.0.0.1"
   SERVER_PORT = (ENV["OCTOBUR_SERVER_PORT"]? || 3000).to_i
 
-  DATABASE_URL = ENV["OCTOBUR_DATABASE_URL"]? || "postgres://postgres:postgres@localhost"
+  DATABASE_URL = ENV["OCTOBUR_DATABASE_URL"]? || "postgres://postgres:postgres@localhost/postgres"
 end

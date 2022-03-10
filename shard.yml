@@ -17,6 +17,9 @@ dependencies:
   pg:
     github: will/crystal-pg
     version: ~> 0.26.0
+  micrate:
+    github: abstraq/micrate
+    branch: master
 
 development_dependencies:
   ameba:
