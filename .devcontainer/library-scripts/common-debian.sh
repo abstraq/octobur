@@ -99,6 +99,7 @@ if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
         apt-transport-https \
         dialog \
         libc6 \
+        libprce2-dev \
         libgcc1 \
         libkrb5-3 \
         libgssapi-krb5-2 \

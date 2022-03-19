@@ -32,7 +32,8 @@
 		"veelenga.crystal-ameba",
 		"ms-azuretools.vscode-docker",
 		"editorconfig.editorconfig",
-		"ckolkman.vscode-postgres"
+		"ckolkman.vscode-postgres",
+		"christian-kohler.path-intellisense"
 	],
 	"forwardPorts": [
 		3000,
