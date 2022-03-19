@@ -20,10 +20,16 @@ dependencies:
   micrate:
     github: abstraq/micrate
     branch: master
+  crystal-argon2:
+    github: sushichain/crystal-argon2
+    version: ~> 0.1.3
 
 development_dependencies:
   ameba:
     github: crystal-ameba/ameba
+  athena-spec:
+    github: athena-framework/spec
+    version: ~> 0.2.6
 
 targets:
   octobur:

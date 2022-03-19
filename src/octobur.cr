@@ -5,6 +5,12 @@
 
 require "athena"
 
-require "./constants"
+require "./model/**"
+require "./controller/**"
 
-ATH.run Octobur::SERVER_PORT, Octobur::SERVER_HOST
+# Configure DI bindings
+ADI.bind(database : DB::Database, DB.open(ENV["OCTOBUR_DATABASE_URL"]? || "postgres:///"))
+
+SERVER_PORT = (ENV["OCTOBUR_SERVER_PORT"]? || 3000).to_i
+SERVER_HOST = ENV["OCTOBUR_SERVER_HOST"]? || "127.0.0.1"
+ATH.run(SERVER_PORT, SERVER_HOST)
